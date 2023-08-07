@@ -10,7 +10,12 @@ const VaccinationCoverage = props => {
     vaccineDate: each.vaccine_date,
   }))
   console.log('my  updateddata', updatedData)
-
+  const dataFormatter = number => {
+    if (number > 1000) {
+      return `${(number / 1000).toString()}k`
+    }
+    return number.toString()
+  }
   console.log(vaccinationData)
 
   return (
@@ -23,17 +28,50 @@ const VaccinationCoverage = props => {
         data={updatedData}
         margin={{
           top: 5,
-          right: 30,
-          bottom: 5,
         }}
       >
         {/* <CartesianGrid strokeDasharray="3 3" /> */}
-        <XAxis dataKey="vaccineDate" tick={{stroke: 'gray', strokewidth: 1}} />
-        <YAxis tick={{stroke: 'gray', strokewidth: 0}} />
+        <XAxis
+          dataKey="vaccineDate"
+          tick={{
+            stroke: '#6c757d',
+            strokewidth: 1,
+            fontSize: 15,
+            fontFamily: 'Roboto',
+          }}
+        />
+        <YAxis
+          tickFormatter={dataFormatter}
+          tick={{
+            stroke: '#6c757d',
+            strokeWidth: 0.5,
+            fontSize: 15,
+            fontFamily: 'Roboto',
+          }}
+        />
         <Tooltip />
-        <Legend align="center" />
-        <Bar dataKey="dose1" name="Dose1" fill="#5a8dee" />
-        <Bar dataKey="dose2" name="Dose2" fill="#f54394" />
+        <Legend
+          wrapperStyle={{
+            paddingTop: 20,
+            textAlign: 'center',
+            fontSize: 12,
+            fontFamily: 'Roboto',
+          }}
+        />
+        <Bar
+          dataKey="dose1"
+          name="Dose1"
+          fill="#5a8dee"
+          radius={[10, 10, 0, 0]}
+          barSize="20%"
+        />
+        <Bar
+          dataKey="dose2"
+          name="Dose2"
+          fill="#f54394"
+          radius={[10, 10, 0, 0]}
+          barSize="20%"
+        />
       </BarChart>
     </div>
   )

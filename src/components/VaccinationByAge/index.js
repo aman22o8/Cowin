@@ -1,6 +1,6 @@
 // Write your code here
 import './index.css'
-import {PieChart, Pie, Legend, Cell, ResponsiveContainer} from 'recharts'
+import {PieChart, Pie, Legend, Cell} from 'recharts'
 
 const VaccinationByGender = props => {
   const {ageData} = props
@@ -24,7 +24,12 @@ const VaccinationByGender = props => {
           <Cell name="45-60" fill="#a3df9f" />
           <Cell name="Above 60" fill="#64c2a6" />
         </Pie>
-        <Legend iconType="circle" layout="horizontal" align="center" />
+        <Legend
+          iconType="circle"
+          layout="horizontal"
+          align="center"
+          wrapperStyle={{fontSize: 12, fontFamily: 'Roboto'}}
+        />
       </PieChart>
     </div>
   )
