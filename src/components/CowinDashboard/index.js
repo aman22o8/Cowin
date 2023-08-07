@@ -62,7 +62,7 @@ class CowinDashboard extends Component {
   )
 
   renderprogress = () => (
-    <div data-testid="loader">
+    <div className="loading-view" data-testid="loader">
       <Loader type="ThreeDots" color="#ffffff" height={80} width={80} />
     </div>
   )

@@ -33,3 +33,9 @@
 .myData {
   width: 100%;
 }
+.loading-view {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
