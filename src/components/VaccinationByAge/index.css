@@ -2,7 +2,9 @@
 /* Write your CSS here */
 .third {
   margin: 10px 0px;
-  width: 100%;
+  min-width: 100%;
+  background-color: #1c1c2b;
+  padding: 20px;
 }
 .desc_third {
   font-size: 20px;
