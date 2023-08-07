@@ -1,0 +1,11 @@
+/* Write your CSS here */
+.second {
+  margin: 10px 0px;
+  width: 100%;
+}
+.desc_second {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: 'roboto';
+  color: #94a3b8;
+}
